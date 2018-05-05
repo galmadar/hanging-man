@@ -13,7 +13,6 @@ class HangmanFirebase {
     }
 
     // User
-
     login(userName) {
         const user = new User();
         user.name = userName;
@@ -78,7 +77,7 @@ class HangmanFirebase {
                 }
             })
             .catch(err => {
-                logger.error('error in readBy', err);
+                console.error('error in readBy', err);
                 throw err;
             });
     }

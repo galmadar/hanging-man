@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GamesList from '../../components/GamesList';
 import { GAME_STATUS } from '../../utils/constants';
+import HangmanFirebase from '../../utils/hangmanFirebase/HangmanFirebase';
 
 const gamesList = [
   {
@@ -15,6 +16,18 @@ const gamesList = [
 ];
 
 class HangGames extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userId: props.match.userId
+    }
+  }
+
+  componentDidMount() {
+    if (this.state.userId) {
+
+    }
+  }
 
   render() {
     return (

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function UserRow(props) {
+  const { user } = props;
   return (
-    <li>
-      <Link to={`/games/${props.id}`}>{props.name}</Link>
+    <li onClick={() => props.onClick(user)}>
+      <p>{user.name}</p>
     </li>
   )
 }
@@ -13,7 +13,7 @@ function UsersList(props) {
   return (
     <div>
       <ul>
-        {props.usersList.map((user, key) => <UserRow {...user} key={key} />)}
+        {props.usersList.map((user, key) => <UserRow user={user} key={key} onClick={props.onUserClick} />)}
       </ul>
     </div>
   );
