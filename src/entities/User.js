@@ -1,7 +1,5 @@
 class User {
 
-    name;
-
     constructor() {
     }
 
@@ -12,6 +10,6 @@ let USER_NAME_KEY = 'name';
 
 module.exports = {
     User,
-    USERS_TABLE_NAME,
+    USERS_TABLE_NAME: USERS_TABLE_NAME,
     USER_NAME_KEY: USER_NAME_KEY
 };
