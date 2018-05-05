@@ -16,7 +16,7 @@ class HangmanFirebase {
         user.name = userName;
 
         return this.findUserByName(userName)
-            .than(user => {
+            .then(user => {
                 if (user) {
                     return user;
                 } else {
@@ -34,7 +34,7 @@ class HangmanFirebase {
     private push(tableName, obj) {
         const pushRef = this.firebase.database().ref(tableName).push();
         return pushRef.set(obj)
-            .than(err => {
+            .then(err => {
                 if (err) {
                     throw new Error('cannot push to tableName:', tableName);
                 } else {
