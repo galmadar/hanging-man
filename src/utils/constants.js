@@ -19,13 +19,13 @@ export const GAMES_LIST = [
 export const USERS_LIST = [
   {
     name: 'Maor',
-    key: '1'
+    id: '1'
   }, {
     name: 'Gal',
-    key: '2'
+    id: '2'
   }, {
     name: 'Avi',
-    key: '3'
+    id: '3'
   }
 ];
 

@@ -1,10 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+function UserRow(props) {
+  return (
+    <li>
+      <Link to={`/games/${props.id}`}>{props.name}</Link>
+    </li>
+  )
+}
 
 function UsersList(props) {
   return (
     <div>
       <ul>
-        {props.usersList.map((user, key) => <li key={key}>{user.name}</li>)}
+        {props.usersList.map((user, key) => <UserRow {...user} key={key} />)}
       </ul>
     </div>
   );
