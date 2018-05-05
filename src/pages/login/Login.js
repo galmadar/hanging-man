@@ -1,21 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button } from '../../components/Button';
+import { Redirect } from 'react-router-dom';
 
-class App extends Component {
+class Login extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      isAuthenticated: false
+    }
+  }
+
+  onTextChange = (e) => {
+    this.setState({ username: e.target.value });
+  };
+
+  onClickLogin = (e) => {
+    console.log(this.state.username);
+    this.setState({ isAuthenticated: true });
+  };
+
   render() {
+    if (this.state.isAuthenticated) {
+      return <Redirect to={'/home'} />;
+    }
+
     return (
-      <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React</h1>
-    </header>
-    <p className="App-intro">
-      To get started, edit <code>src/App.js</code> and save to reload.
-    </p>
-    </div>
-  );
+      <div className="login">
+        <div>
+          <input type="text" placeholder="Your name" value={this.state.username} onChange={this.onTextChange} />
+        </div>
+        <div>
+          <Button onClick={this.onClickLogin}>
+            Login
+          </Button>
+        </div>
+      </div>
+    );
   }
 }
 
-export default App;
+export default Login;
